@@ -123,9 +123,9 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-AWS_ACCESS_KEY_ID = 'AKIAZPF4PL7VBXN2BP5Q'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'consultaddimageswebsite'
+AWS_ACCESS_KEY_ID = os.environ.get('S3_ACCESS_KEY')
+AWS_SECRET_ACCESS_KEY = os.environ.get('S3_SECRET_KEY')
+AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_BUCKET_NAME')
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400',
